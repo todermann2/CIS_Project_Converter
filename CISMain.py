@@ -2,7 +2,7 @@ from CISProject import LengthConverter, TemperatureConverter, AreaConverter, Vol
 
 def main():
 	print("-----POSSIBLE LENGTH CONVERSIONS ARE AS FOLLOWS.-----")
-	print("-----------------------------------------------------")
+	print("1. Length Conversions:")
 	print("Miles to Kilometers.")
 	print("Kilometers to Miles.") 
 	print("Inches to Centimeters.")
@@ -11,12 +11,12 @@ def main():
 	print("Feet to Meters.")
 	print("Meters to Yards.")
 	print("Yards to Meters.")
-	print("------POSSIBLE TEMP CONVERSIONS ARE AS FOLLOWS-----")
-	print("----------------------------------------------------")
+	print("")
+	print("2. Temperature Conversions:")
 	print("Celsius to Fahrenheit.") 
 	print("Fahrenheit to Celsius.")
-	print("-----POSSIBLE AREA CONVERSIONS ARE AS FOLLOWS.-----")
-	print("---------------------------------------------------")
+	print("")
+	print("3. Area Conversions:")
 	print("Inches to Feet.")
 	print("Inches to Yards.")
 	print("Feet to Inches.")
@@ -27,8 +27,8 @@ def main():
 	print("Acres to Yards.")
 	print("Acres to Miles.")
 	print("Miles to Acres.")
-	print("-----POSSIBLE VOLUME CONVERSIONS ARE AS FOLLOWS.-----")
-	print("-----------------------------------------------------")
+	print("")
+	print("4. Volume Conversions:")
 	print("Quart to Liters.") 
 	print("Liters to Quart.")
 	print("Gallon to Liters.")
@@ -37,24 +37,28 @@ def main():
 	print("Liters to Pint.")
 	print("Fluid Ounce to Milliliters.")
 	print("Milliliters to Fluid Ounce.")
+	print("------------------------------")
 	
 	conversions = []  # List to store converted data
-	
-	class_selection = input("What is being converted today? \n(Select from: Temp, Volume, Area, Length): ")
-	
-	class_selection = class_selection.lower()
+
+	class_selection = ""
 	
 	while class_selection != "exit":
+		class_selection = input("What is being converted today? (Type 'exit' to quit): ")
+		class_selection = class_selection.lower()
+
+
 		if class_selection == "length":
 			converter = LengthConverter()
-			metric = input("Enter the original metric type for your length: ")
-			convert = input("Enter the metric to convert to: ")
-			length = float(input("Enter the length: "))
-			
-			converted_length = converter.use_convert(metric, convert, length)
-			conversions.append((metric, convert, length, converted_length))
-			
-		
+            		metric = input("Enter the original metric type for your length: ")
+            		convert = input("Enter the metric to convert to: ")
+            		length = float(input("Enter the length: "))
+
+            		converted_length = converter.use_convert(metric, convert, length)
+            		conversions.append((metric, convert, length, converted_length))
+
+
+	
 		elif class_selection == "temp":
 			metric = input("Enter the metric in use \n(Select from: C, F): ")
 			metric = metric.lower()
@@ -90,6 +94,9 @@ def main():
 			
 			converted_volume = converter.use_convert(metric, convert, volume)
 			conversions.append((metric, convert, volume, converted_volume))
+
+		elif class_selection == "exit":
+			break
 		
 		else:
 			print("Invalid selection.")
@@ -101,16 +108,17 @@ def main():
 	for conversion in conversions:
 		print(conversion)
 		
-	answers = input("Would you like to save the evidence of your conversions in a file?(yes or no): ")
+	save_file = input("Would you like to save the conversions to a file? (yes or no): ").lower()
 	
-	make_a_file = answers.lower()
 	
-	if make_a_file == "yes":
+	if save_file == "yes":
 		file_name = input("Enter your desired name of the file!(one word, no spaces): ")
 		with open(file_name, "w") as conversion_file:
-			conversion_file.append(conversions)
+			for conversion in conversions:
+				conversion_file.write(f"{conversion}\n")
+			print(f"Conversions saved to {file_name}.txt")
 	else:
-		pass
+		print("Conversions not saved.")
 		
             
 if __name__ == "__main__":
