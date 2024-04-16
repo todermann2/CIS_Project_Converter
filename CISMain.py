@@ -100,9 +100,7 @@ def main():
 		
 		else:
 			print("Invalid selection.")
-			
-			class_selection = input("What is being converted today? \n(Select from: Temp, Volume, Area, Length): ")
-			class_selection = class_selection.lower()
+
 			
 	print("\nAll conversions:")
 	for conversion in conversions:
