@@ -60,12 +60,6 @@ class LengthConverter:
 		
 		else:
 			print(f'Converter not found.')
-        
-'''
-converter = LengthConverter()
-
-converter.use_convert("miles", "kilometers", 40)
-'''
 
 class TemperatureConverter:
 	def __init__(self, temperature):
@@ -76,16 +70,6 @@ class TemperatureConverter:
 		
 	def fahrenheit_to_celsius(self):
 		return (self.temperature - 32) * (5/9)
-		
-'''
-temp_celsius = int(input(""))
-
-converter = TemperatureConverter(temp_celsius)
-
-temp_fahrenheit = converter.celsius_to_fahrenheit()
-
-print(f"{temp_celsius:.2f} Celsius is {temp_fahrenheit:.2f} Fahrenheit!")
-'''
 
 class AreaConverter:
     def __init__(self):
@@ -170,14 +154,6 @@ class AreaConverter:
 
         else:
             print(f'Conversion not supported.')
-
-'''
-converter = AreaConverter()
-
-result = converter.use_convert("square yards", "square feet", 40)
-
-print(f"{result:.4f}")
-'''
 
 class VolumeConverter:
     def __init__(self):
@@ -266,11 +242,3 @@ class VolumeConverter:
         
         else:
             return "Conversion not supported"
-
-'''
-converter = VolumeConverter()
-
-result = converter.use_convert("pint", "liters", 1)
-
-print(f"{result:.4f}")
-'''
