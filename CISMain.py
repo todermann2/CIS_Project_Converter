@@ -1,7 +1,7 @@
 from CISProject import LengthConverter, TemperatureConverter, AreaConverter, VolumeConverter
 
 def main():
-	print("-----POSSIBLE LENGTH CONVERSIONS ARE AS FOLLOWS.-----")
+	print("-----POSSIBLE CONVERSIONS ARE AS FOLLOWS.-----")
 	print("1. Length Conversions:")
 	print("Miles to Kilometers.")
 	print("Kilometers to Miles.") 
