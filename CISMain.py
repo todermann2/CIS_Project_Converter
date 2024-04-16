@@ -44,7 +44,7 @@ def main():
 	class_selection = ""
 	
 	while class_selection != "exit":
-		class_selection = input("What is being converted today? (Type 'exit' to quit): ")
+		class_selection = input("What is being converted today? ~ Length ~ Temp ~ Area ~ Volume ~ (Type 'exit' to quit): ")
 		class_selection = class_selection.lower()
 
 
