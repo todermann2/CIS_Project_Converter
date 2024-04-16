@@ -1,7 +1,8 @@
 from CISProject import LengthConverter, TemperatureConverter, AreaConverter, VolumeConverter
 
 def main():
-	print("Possible length conversions are as follows.")
+	print("-----POSSIBLE LENGTH CONVERSIONS ARE AS FOLLOWS.-----")
+	print("-----------------------------------------------------")
 	print("Miles to Kilometers.")
 	print("Kilometers to Miles.") 
 	print("Inches to Centimeters.")
@@ -10,12 +11,12 @@ def main():
 	print("Feet to Meters.")
 	print("Meters to Yards.")
 	print("Yards to Meters.")
-	
-	print("Possible temp conversions are as follows.")
+	print("------POSSIBLE TEMP CONVERSIONS ARE AS FOLLOWS-----")
+	print("----------------------------------------------------")
 	print("Celsius to Fahrenheit.") 
 	print("Fahrenheit to Celsius.")
-	
-	print("Possible area conversions are as follows.")
+	print("-----POSSIBLE AREA CONVERSIONS ARE AS FOLLOWS.-----")
+	print("---------------------------------------------------")
 	print("Inches to Feet.")
 	print("Inches to Yards.")
 	print("Feet to Inches.")
@@ -26,8 +27,8 @@ def main():
 	print("Acres to Yards.")
 	print("Acres to Miles.")
 	print("Miles to Acres.")
-	
-	print("Possible volume conversions are as follows.")
+	print("-----POSSIBLE VOLUME CONVERSIONS ARE AS FOLLOWS.-----")
+	print("-----------------------------------------------------")
 	print("Quart to Liters.") 
 	print("Liters to Quart.")
 	print("Gallon to Liters.")
@@ -52,6 +53,7 @@ def main():
 			
 			converted_length = converter.use_convert(metric, convert, length)
 			conversions.append((metric, convert, length, converted_length))
+			
 		
 		elif class_selection == "temp":
 			metric = input("Enter the metric in use \n(Select from: C, F): ")
@@ -63,7 +65,7 @@ def main():
 				celsius = converter.celsius_to_fahrenheit()
 				print(f"{temp} Celsius is {celsius:.2f} Fahrenheit!")
 				
-				conversions.append(("Celsius", "Fahrenheit", temp, celsius)
+				conversions.append(("Celsius", "Fahrenheit", temp, celsius))
 			
 			elif metric == 'f':
 				fahrenheit = converter.fahrenheit_to_celsius()
@@ -91,14 +93,22 @@ def main():
 		
 		else:
 			print("Invalid selection.")
-        
-        class_selection = input("What is being converted today? \n(Select from: Temp, Volume, Area, Length): ")
-        class_selection = class_selection.lower()
-    
-    
-    print("\nAll conversions:")
-    for conversion in conversions:
-        print(conversion)
+			
+			class_selection = input("What is being converted today? \n(Select from: Temp, Volume, Area, Length): ")
+			class_selection = class_selection.lower()
+			
+	print("\nAll conversions:")
+	for conversion in conversions:
+		print(conversion)
+		
+	answers = input("Would you like to save the evidence of your conversions in a file?(yes or no): ")
+	
+	make_a_file = answers.lower()
+	
+	if make_a_file == "yes":
+		file_name = input("Enter your desired name of the file!(one word, no spaces): ")
+		with ''' make a file operation '''
+		
             
 if __name__ == "__main__":
     main()
