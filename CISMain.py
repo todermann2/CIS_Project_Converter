@@ -50,12 +50,12 @@ def main():
 
 		if class_selection == "length":
 			converter = LengthConverter()
-            		metric = input("Enter the original metric type for your length: ")
-            		convert = input("Enter the metric to convert to: ")
-            		length = float(input("Enter the length: "))
-
-            		converted_length = converter.use_convert(metric, convert, length)
-            		conversions.append((metric, convert, length, converted_length))
+			metric = input("Enter the original metric type for your length: ")
+			convert = input("Enter the metric to convert to: ")
+			length = float(input("Enter the length: "))
+			
+			converted_length = converter.use_convert(metric, convert, length)
+			conversions.append((metric, convert, length, converted_length))
 
 
 	
