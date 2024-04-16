@@ -157,24 +157,10 @@ class AreaConverter:
 
 class VolumeConverter:
     def __init__(self):
-        self.ml_to_cm3_conversion = 1
-        self.m3_to_liters_conversion = 1000
         self.quart_to_liters_conversion = 0.9461
         self.gallon_to_liters_conversion = 3.7854
         self.pint_to_liters_conversion = 0.4723
         self.fluid_ounce_to_ml_conversion = 29.6
-    
-    def ml_to_cm3(self, ml):
-        return ml * self.ml_to_cm3_conversion
-    
-    def cm3_to_ml(self, cm3):
-        return cm3 / self.ml_to_cm3_conversion
-    
-    def m3_to_liters(self, m3):
-        return m3 * self.m3_to_liters_conversion
-    
-    def liters_to_m3(self, liters):
-        return liters / self.m3_to_liters_conversion
     
     def quart_to_liters(self, quart):
         return quart * self.quart_to_liters_conversion
@@ -204,19 +190,7 @@ class VolumeConverter:
         original_metric = original_metric.lower()
         convert_to = convert_to.lower()
         
-        if original_metric == "ml" and convert_to == "cm3":
-            return self.ml_to_cm3(volume)
-        
-        elif original_metric == "cm3" and convert_to == "ml":
-            return self.cm3_to_ml(volume)
-        
-        elif original_metric == "m3" and convert_to == "liters":
-            return self.m3_to_liters(volume)
-        
-        elif original_metric == "liters" and convert_to == "m3":
-            return self.liters_to_m3(volume)
-        
-        elif original_metric == "quart" and convert_to == "liters":
+        if original_metric == "quart" and convert_to == "liters":
             return self.quart_to_liters(volume)
         
         elif original_metric == "liters" and convert_to == "quart":
@@ -234,10 +208,10 @@ class VolumeConverter:
         elif original_metric == "liters" and convert_to == "pint":
             return self.liters_to_pint(volume)
         
-        elif original_metric == "fluid ounce" and convert_to == "ml":
+        elif original_metric == "fluid ounce" and convert_to == "milliliters":
             return self.fluid_ounce_to_ml(volume)
         
-        elif original_metric == "ml" and convert_to == "fluid ounce":
+        elif original_metric == "milliliters" and convert_to == "fluid ounce":
             return self.ml_to_fluid_ounce(volume)
         
         else:
