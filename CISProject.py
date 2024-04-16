@@ -85,6 +85,191 @@ temp_fahrenheit = converter.celsius_to_fahrenheit()
 
 print(f"{temp_celsius:.2f} Celsius is {temp_fahrenheit:.2f} Fahrenheit!")
 '''
-class VolumeConverter:
 
 class AreaConverter:
+    def __init__(self):
+        self.inches_to_feet_conversion = 1 / 144
+        self.inches_to_yards_conversion = 1 / 1296
+        
+        self.feet_to_inches_conversion = 144
+        self.feet_to_yards_conversion = 1 / 9
+        
+        self.yards_to_inches_conversion = 1296
+        self.yards_to_feet_conversion = 9
+        self.yards_to_acres_conversion = 1 / 4840
+        
+        self.acres_to_yards_conversion = 4840
+        self.acres_to_miles_conversion = 1 / 640
+        
+        self.miles_to_acres_conversion = 640
+
+    def inches_to_feet(self, square_inches):
+        return square_inches * self.inches_to_feet_conversion
+
+    def inches_to_yards(self, square_inches):
+        return square_inches * self.inches_to_yards_conversion
+
+    def feet_to_inches(self, square_feet):
+        return square_feet * self.feet_to_inches_conversion
+
+    def feet_to_yards(self, square_feet):
+        return square_feet * self.feet_to_yards_conversion
+
+    def yards_to_inches(self, square_yards):
+        return square_yards * self.yards_to_inches_conversion
+
+    def yards_to_feet(self, square_yards):
+        return square_yards * self.yards_to_feet_conversion
+
+    def yards_to_acres(self, square_yards):
+        return square_yards * self.yards_to_acres_conversion
+
+    def acres_to_yards(self, acres):
+        return acres * self.acres_to_yards_conversion
+
+    def acres_to_miles(self, acres):
+        return acres * self.acres_to_miles_conversion
+
+    def miles_to_acres(self, square_miles):
+        return square_miles * self.miles_to_acres_conversion
+
+    def use_convert(self, original_metric, convert_to, area):
+        original_metric = original_metric.lower()
+        convert_to = convert_to.lower()
+
+        if original_metric == "square inches" and convert_to == "square feet":
+            return self.inches_to_feet(area)
+
+        elif original_metric == "square inches" and convert_to == "square yards":
+            return self.inches_to_yards(area)
+
+        elif original_metric == "square feet" and convert_to == "square inches":
+            return self.feet_to_inches(area)
+
+        elif original_metric == "square feet" and convert_to == "square yards":
+            return self.feet_to_yards(area)
+
+        elif original_metric == "square yards" and convert_to == "square inches":
+            return self.yards_to_inches(area)
+
+        elif original_metric == "square yards" and convert_to == "square feet":
+            return self.yards_to_feet(area)
+
+        elif original_metric == "square yards" and convert_to == "acres":
+            return self.yards_to_acres(area)
+
+        elif original_metric == "acres" and convert_to == "square yards":
+            return self.acres_to_yards(area)
+
+        elif original_metric == "acres" and convert_to == "square miles":
+            return self.acres_to_miles(area)
+
+        elif original_metric == "square miles" and convert_to == "acres":
+            return self.miles_to_acres(area)
+
+        else:
+            print(f'Conversion not supported.')
+
+'''
+converter = AreaConverter()
+
+result = converter.use_convert("square yards", "square feet", 40)
+
+print(f"{result:.4f}")
+'''
+
+class VolumeConverter:
+    def __init__(self):
+        self.ml_to_cm3_conversion = 1
+        self.m3_to_liters_conversion = 1000
+        self.quart_to_liters_conversion = 0.9461
+        self.gallon_to_liters_conversion = 3.7854
+        self.pint_to_liters_conversion = 0.4723
+        self.fluid_ounce_to_ml_conversion = 29.6
+    
+    def ml_to_cm3(self, ml):
+        return ml * self.ml_to_cm3_conversion
+    
+    def cm3_to_ml(self, cm3):
+        return cm3 / self.ml_to_cm3_conversion
+    
+    def m3_to_liters(self, m3):
+        return m3 * self.m3_to_liters_conversion
+    
+    def liters_to_m3(self, liters):
+        return liters / self.m3_to_liters_conversion
+    
+    def quart_to_liters(self, quart):
+        return quart * self.quart_to_liters_conversion
+    
+    def liters_to_quart(self, liters):
+        return liters / self.quart_to_liters_conversion
+    
+    def gallon_to_liters(self, gallon):
+        return gallon * self.gallon_to_liters_conversion
+    
+    def liters_to_gallon(self, liters):
+        return liters / self.gallon_to_liters_conversion
+    
+    def pint_to_liters(self, pint):
+        return pint * self.pint_to_liters_conversion
+    
+    def liters_to_pint(self, liters):
+        return liters / self.pint_to_liters_conversion
+    
+    def fluid_ounce_to_ml(self, fluid_ounce):
+        return fluid_ounce * self.fluid_ounce_to_ml_conversion
+    
+    def ml_to_fluid_ounce(self, ml):
+        return ml / self.fluid_ounce_to_ml_conversion
+    
+    def use_convert(self, original_metric, convert_to, volume):
+        original_metric = original_metric.lower()
+        convert_to = convert_to.lower()
+        
+        if original_metric == "ml" and convert_to == "cm3":
+            return self.ml_to_cm3(volume)
+        
+        elif original_metric == "cm3" and convert_to == "ml":
+            return self.cm3_to_ml(volume)
+        
+        elif original_metric == "m3" and convert_to == "liters":
+            return self.m3_to_liters(volume)
+        
+        elif original_metric == "liters" and convert_to == "m3":
+            return self.liters_to_m3(volume)
+        
+        elif original_metric == "quart" and convert_to == "liters":
+            return self.quart_to_liters(volume)
+        
+        elif original_metric == "liters" and convert_to == "quart":
+            return self.liters_to_quart(volume)
+        
+        elif original_metric == "gallon" and convert_to == "liters":
+            return self.gallon_to_liters(volume)
+        
+        elif original_metric == "liters" and convert_to == "gallon":
+            return self.liters_to_gallon(volume)
+        
+        elif original_metric == "pint" and convert_to == "liters":
+            return self.pint_to_liters(volume)
+        
+        elif original_metric == "liters" and convert_to == "pint":
+            return self.liters_to_pint(volume)
+        
+        elif original_metric == "fluid ounce" and convert_to == "ml":
+            return self.fluid_ounce_to_ml(volume)
+        
+        elif original_metric == "ml" and convert_to == "fluid ounce":
+            return self.ml_to_fluid_ounce(volume)
+        
+        else:
+            return "Conversion not supported"
+
+'''
+converter = VolumeConverter()
+
+result = converter.use_convert("pint", "liters", 1)
+
+print(f"{result:.4f}")
+'''
