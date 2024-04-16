@@ -83,13 +83,13 @@ def main():
 			
 			if metric == "c":
 				celsius = converter.celsius_to_fahrenheit()
-				print(f"{temp} Celsius is {celsius:.2f} Fahrenheit!")
+				print(f"{temp} Celsius is {celsius:.4f} Fahrenheit!")
 				
 				conversions.append(("Celsius", "Fahrenheit", temp, celsius))
 			
 			elif metric == 'f':
 				fahrenheit = converter.fahrenheit_to_celsius()
-				print(f"{temp} Fahrenheit is {fahrenheit:.2f} Celsius!")
+				print(f"{temp} Fahrenheit is {fahrenheit:.4f} Celsius!")
 				
 				conversions.append(("Fahrenheit", "Celsius", temp, fahrenheit))
 		
@@ -100,7 +100,7 @@ def main():
 			area = float(input("Enter the area: "))
 			
 			converted_area = converter.use_convert(metric, convert, area)
-			print(f"{converted_area:.2f} {convert}")
+			print(f"{converted_area:.4f} {convert}")
 			conversions.append((metric, convert, area, converted_area))
 		
 		elif class_selection == "volume":
@@ -110,7 +110,7 @@ def main():
 			volume = float(input("Enter the volume: "))
 			
 			converted_volume = converter.use_convert(metric, convert, volume)
-			print(f"{converted_volume:.2f} {convert}")
+			print(f"{converted_volume:.4f} {convert}")
 			conversions.append((metric, convert, volume, converted_volume))
 
 		elif class_selection == "exit":
