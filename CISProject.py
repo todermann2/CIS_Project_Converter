@@ -157,10 +157,10 @@ class AreaConverter:
 
 class VolumeConverter:
     def __init__(self):
-        self.quart_to_liters_conversion = 0.9461
-        self.gallon_to_liters_conversion = 3.7854
-        self.pint_to_liters_conversion = 0.4723
-        self.fluid_ounce_to_ml_conversion = 29.6
+        self.quart_to_liters_conversion = 0.946353
+        self.gallon_to_liters_conversion = 3.78541
+        self.pint_to_liters_conversion = 0.473176
+        self.fluid_ounce_to_ml_conversion = 29.5735
     
     def quart_to_liters(self, quart):
         return quart * self.quart_to_liters_conversion
