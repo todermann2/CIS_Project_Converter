@@ -34,29 +34,29 @@ class LengthConverter:
 		original_metric = original_metric.lower()
 		convert_to = convert_to.lower()
 		
-		if original_metric == "mile" and convert_to == "kilometer":
-			print(f'{self.miles_to_km(length):.2f} km')
+		if original_metric == "miles" and convert_to == "kilometers":
+			print(f'{self.miles_to_km(length):.4f} km')
 		
-		elif original_metric == "kilometer" and convert_to == "mile":
-			print(f'{self.km_to_miles(length):.2f} miles')
+		elif original_metric == "kilometers" and convert_to == "miles":
+			print(f'{self.km_to_miles(length):.4f} miles')
 		
-		elif original_metric == "inch" and convert_to == "centimeter":
-			print(f'{self.inches_to_cm(length):.2f} cm')
+		elif original_metric == "inches" and convert_to == "centimeters":
+			print(f'{self.inches_to_cm(length):.4f} cm')
 			
-		elif original_metric == "centimeter" and convert_to == "inch":
-			print(f'{self.cm_to_inches(length):.2f} in')
+		elif original_metric == "centimeters" and convert_to == "inches":
+			print(f'{self.cm_to_inches(length):.4f} in')
 			
-		elif original_metric == "meter" and convert_to == "feet":
-			print(f'{self.meters_to_feet(length):.2f} ft')
+		elif original_metric == "meters" and convert_to == "feet":
+			print(f'{self.meters_to_feet(length):.4f} ft')
 		
-		elif original_metric == "feet" and convert_to == "meter":
-			print(f'{self.feet_to_meters(length):.2f} m')
+		elif original_metric == "feet" and convert_to == "meters":
+			print(f'{self.feet_to_meters(length):.4f} m')
 			
-		elif original_metric == "meter" and convert_to == "yard":
-			print(f'{self.meters_to_yards(length):.2f} yards')
+		elif original_metric == "meters" and convert_to == "yards":
+			print(f'{self.meters_to_yards(length):.4f} yards')
 		
-		elif original_metric == "yard" and convert_to == "meter":
-			print(f'{self.yards_to_meters(length):.2f} m')
+		elif original_metric == "yards" and convert_to == "meters":
+			print(f'{self.yards_to_meters(length):.4f} m')
 		
 		else:
 			print(f'Converter not found.')
@@ -122,34 +122,34 @@ class AreaConverter:
         original_metric = original_metric.lower()
         convert_to = convert_to.lower()
 
-        if original_metric == "square inch" and convert_to == "square feet":
+        if original_metric == "square inches" and convert_to == "square feet":
             return self.inches_to_feet(area)
 
-        elif original_metric == "square inch" and convert_to == "square yard":
+        elif original_metric == "square inches" and convert_to == "square yards":
             return self.inches_to_yards(area)
 
-        elif original_metric == "square feet" and convert_to == "square inch":
+        elif original_metric == "square feet" and convert_to == "square inches":
             return self.feet_to_inches(area)
 
-        elif original_metric == "square feet" and convert_to == "square yard":
+        elif original_metric == "square feet" and convert_to == "square yards":
             return self.feet_to_yards(area)
 
-        elif original_metric == "square yard" and convert_to == "square inch":
+        elif original_metric == "square yards" and convert_to == "square inches":
             return self.yards_to_inches(area)
 
-        elif original_metric == "square yard" and convert_to == "square feet":
+        elif original_metric == "square yards" and convert_to == "square feet":
             return self.yards_to_feet(area)
 
-        elif original_metric == "square yard" and convert_to == "acre":
+        elif original_metric == "square yards" and convert_to == "acres":
             return self.yards_to_acres(area)
 
-        elif original_metric == "acre" and convert_to == "square yard":
+        elif original_metric == "acres" and convert_to == "square yards":
             return self.acres_to_yards(area)
 
-        elif original_metric == "acre" and convert_to == "square mile":
+        elif original_metric == "acres" and convert_to == "square miles":
             return self.acres_to_miles(area)
 
-        elif original_metric == "square mile" and convert_to == "acre":
+        elif original_metric == "square miles" and convert_to == "acres":
             return self.miles_to_acres(area)
 
         else:
@@ -190,28 +190,28 @@ class VolumeConverter:
         original_metric = original_metric.lower()
         convert_to = convert_to.lower()
         
-        if original_metric == "quart" and convert_to == "liter":
+        if original_metric == "quarts" and convert_to == "liters":
             return self.quart_to_liters(volume)
         
-        elif original_metric == "liter" and convert_to == "quart":
+        elif original_metric == "liters" and convert_to == "quarts":
             return self.liters_to_quart(volume)
         
-        elif original_metric == "gallon" and convert_to == "liter":
+        elif original_metric == "gallons" and convert_to == "liters":
             return self.gallon_to_liters(volume)
         
-        elif original_metric == "liter" and convert_to == "gallon":
+        elif original_metric == "liters" and convert_to == "gallons":
             return self.liters_to_gallon(volume)
         
-        elif original_metric == "pint" and convert_to == "liter":
+        elif original_metric == "pints" and convert_to == "liters":
             return self.pint_to_liters(volume)
         
-        elif original_metric == "liter" and convert_to == "pint":
+        elif original_metric == "liters" and convert_to == "pints":
             return self.liters_to_pint(volume)
         
-        elif original_metric == "fluid ounce" and convert_to == "milliliter":
+        elif original_metric == "fluid ounces" and convert_to == "milliliters":
             return self.fluid_ounce_to_ml(volume)
         
-        elif original_metric == "milliliter" and convert_to == "fluid ounce":
+        elif original_metric == "milliliters" and convert_to == "fluid ounces":
             return self.ml_to_fluid_ounce(volume)
         
         else:
