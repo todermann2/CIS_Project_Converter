@@ -84,7 +84,7 @@ def main():
 			area = float(input("Enter the area: "))
 			
 			converted_area = converter.use_convert(metric, convert, area)
-			print(converted_area)
+			print(f"{converted_area:.2f} {convert}")
 			conversions.append((metric, convert, area, converted_area))
 		
 		elif class_selection == "volume":
@@ -94,7 +94,7 @@ def main():
 			volume = float(input("Enter the volume: "))
 			
 			converted_volume = converter.use_convert(metric, convert, volume)
-			print(converted_volume)
+			print(f"{converted_volume:.2f} {convert}")
 			conversions.append((metric, convert, volume, converted_volume))
 
 		elif class_selection == "exit":
