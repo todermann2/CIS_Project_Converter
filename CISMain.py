@@ -109,6 +109,8 @@ def main():
 		file_name = input("Enter your desired name of the file!(one word, no spaces): ")
 		with open(file_name, "w") as conversion_file:
 			conversion_file.append(conversions)
+	else:
+		pass
 		
             
 if __name__ == "__main__":
