@@ -94,10 +94,7 @@ def main():
 			volume = float(input("Enter the volume: "))
 			
 			converted_volume = converter.use_convert(metric, convert, volume)
-			if converted_volume > 1:
-				print(f"{converted_volume:.2f} {convert}s")
-			if converted_volume <= 1:
-				print(f"{converted_volume:.2f} {convert}")
+			print(f"{converted_volume:.2f} {convert}")
 			conversions.append((metric, convert, volume, converted_volume))
 
 		elif class_selection == "exit":
