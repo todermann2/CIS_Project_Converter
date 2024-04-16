@@ -107,7 +107,8 @@ def main():
 	
 	if make_a_file == "yes":
 		file_name = input("Enter your desired name of the file!(one word, no spaces): ")
-		with ''' make a file operation '''
+		with open(file_name, "w") as conversion_file:
+			conversion_file.append(conversions)
 		
             
 if __name__ == "__main__":
