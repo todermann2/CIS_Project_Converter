@@ -128,11 +128,11 @@ def main():
 	
 	
 	if save_file == "yes":
-		file_name = input("Enter your desired name of the file!(one word, no spaces, no numbers, or special characters): ")
+		file_name = input("Enter your desired name of the file! \n(one word, no spaces, no numbers, special characters, and finish the name with a .txt): ")
 		with open(file_name, "w") as conversion_file:
 			for conversion in conversions:
 				conversion_file.write(f"{conversion}\n")
-			print(f"Conversions saved to {file_name}.txt")
+			print(f"Conversions saved to {file_name}.")
 	else:
 		print("Conversions not saved.")
 		
