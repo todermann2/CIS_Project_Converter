@@ -128,7 +128,7 @@ def main():
 	
 	
 	if save_file == "yes":
-		file_name = input("Enter your desired name of the file!(one word, no spaces): ")
+		file_name = input("Enter your desired name of the file!(one word, no spaces, no numbers, or special characters): ")
 		with open(file_name, "w") as conversion_file:
 			for conversion in conversions:
 				conversion_file.write(f"{conversion}\n")
