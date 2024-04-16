@@ -18,12 +18,19 @@ def main():
         metric = input("Enter the metric in use : ")
         temp = input("Enter the temperature : ")
     
-    if class_selection == "volume":
+    if class_selection == "area":
         converter = AreaConverter()
+        metric = input("Enter the original metric type for your area: ")
+        convert = input("Enter the metric to convert to: ")
+        area = float(input("Enter the area: "))
+        converter.use_convert(metric, convert, area)
+    
+    if class_selection == "volume":
+        converter = VolumeConverter()
         metric = input("Enter the original metric type for your volume: ")
         convert = input("Enter the metric to convert to: ")
-        length = float(input("Enter the volume: "))
-        converter.use_convert(metric, convert, length)
+        volume = float(input("Enter the volume: "))
+        converter.use_convert(metric, convert, volume)
 
 if __name__ == "__main__":
     main() 
